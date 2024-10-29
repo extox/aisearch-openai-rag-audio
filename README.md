@@ -4,10 +4,6 @@
 [![Open in GitHub Codespaces](https://img.shields.io/static/v1?style=for-the-badge&label=GitHub+Codespaces&message=Open&color=brightgreen&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&skip_quickstart=true&machine=basicLinux32gb&repo=860141324&devcontainer_path=.devcontainer%2Fdevcontainer.json&geo=WestUs2)
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/Azure-Samples/aisearch-openai-rag-audio)
 
-이 저장소는 음성을 사용자 인터페이스로 사용하는 애플리케이션에서 RAG 지원을 구현하는 방법의 예제를 포함하고 있으며, GPT-4o 실시간 API를 통해 제공됩니다. 우리는 이러한 패턴을 좀 더 자세히 이 블로그 게시물에서 설명하며, [이 짧은 비디오](https://youtu.be/vXJka8xZ9Ko)에서 이 샘플 앱의 작동 모습을 볼 수 있습니다.
-
-* 기능 * 아키텍처 다이어그램 * 시작하기 * GitHub Codespaces * VS Code Dev Containers * 로컬 환경 * 앱 배포 * 개발 서버
-
 This repo contains an example of how to implement RAG support in applications that use voice as their user interface, powered by the GPT-4o realtime API for audio. We describe the pattern in more detail in [this blog post](https://aka.ms/voicerag), and you can see this sample app in action in [this short video](https://youtu.be/vXJka8xZ9Ko).
 
 * [기능](#Features)
@@ -19,28 +15,27 @@ This repo contains an example of how to implement RAG support in applications th
 * [앱 배포](#deploying-the-app)
 * [개발 서버](#development-server)
 
-## Features
+## 기능
 
-* **Voice interface**: The app uses the browser's microphone to capture voice input, and sends it to the backend where it is processed by the Azure OpenAI GPT-4o Realtime API.
-* **RAG (Retrieval Augmented Generation)**: The app uses the Azure AI Search service to answer questions about a knowledge base, and sends the retrieved documents to the GPT-4o Realtime API to generate a response.
-* **Audio output**: The app plays the response from the GPT-4o Realtime API as audio, using the browser's audio capabilities.
-* **Citations**: The app shows the search results that were used to generate the response.
+* **음성 인터페이스**: 이 앱은 브라우저의 마이크를 사용하여 음성 입력을 캡처하고, 이를 백엔드로 전송하여 Azure OpenAI GPT-4o 실시간 API에 의해 처리합니다.
+* **RAG (Retrieval Augmented Generation)**: 이 앱은 Azure AI Search 서비스를 사용하여 지식 기반에 대한 질문에 답하며, 검색된 문서를 GPT-4o 실시간 API에 전송하여 응답을 생성합니다.
+* **Audio output**: 이 앱은 브라우저의 오디오 기능을 사용하여 GPT-4o 실시간 API의 응답을 오디오로 재생합니다.
+* **Citations**: 이 앱은 응답 생성에 사용된 검색 결과를 보여줍니다.
 
-### Architecture Diagram
+### 아키텍처 다이어그램
 
-The `RTClient` in the frontend receives the audio input, sends that to the Python backend which uses an `RTMiddleTier` object to interface with the Azure OpenAI real-time API, and includes a tool for searching Azure AI Search.
+프론트엔드의 RTClient는 오디오 입력을 수신하고, 이를 Python 백엔드로 전송합니다. 백엔드는 RTMiddleTier 객체를 사용하여 Azure OpenAI 실시간 API와 인터페이스하며, Azure AI Search 검색 도구를 포함합니다.
 
-![Diagram of real-time RAG pattern](docs/RTMTPattern.png)
+![Real-Time API RAG pattern 다이어그램](docs/RTMTPattern.png)
 
-This repository includes infrastructure as code and a `Dockerfile` to deploy the app to Azure Container Apps, but it can also be run locally as long as Azure AI Search and Azure OpenAI services are configured.
+이 저장소에는 인프라 코드와 Dockerfile이 포함되어 있어 앱을 Azure Container Apps에 배포할 수 있지만, Azure AI Search와 Azure OpenAI 서비스가 설정되면 로컬에서도 실행할 수 있습니다.
 
-## Getting Started
-
-You have a few options for getting started with this template. The quickest way to get started is [GitHub Codespaces](#github-codespaces), since it will setup all the tools for you, but you can also [set it up locally](#local-environment). You can also use a [VS Code dev container](#vs-code-dev-containers)
+### 시작하기
+이 템플릿을 시작하는 몇 가지 옵션이 있습니다. 가장 빠르게 시작할 수 있는 방법은 이 [GitHub Codespaces](#github-codespaces)를 사용하여 모든 도구를 설정하는 것입니다. 하지만 [로컬 환경](#local-environment)에서 설정하는 방법을 사용할 수도 있습니다. 아니면 [VS Code dev container](#vs-code-dev-containers)를 사용할 수도 있습니다.
 
 ### GitHub Codespaces
 
-You can run this repo virtually by using GitHub Codespaces, which will open a web-based VS Code in your browser:
+GitHub Codespaces를 사용하여 이 리포지토리를 가상으로 실행할 수 있으며, 이는 브라우저에서 웹 기반의 VS Code를 열 것입니다:
 
 [![Open in GitHub Codespaces](https://img.shields.io/static/v1?style=for-the-badge&label=GitHub+Codespaces&message=Open&color=brightgreen&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&skip_quickstart=true&machine=basicLinux32gb&repo=860141324&devcontainer_path=.devcontainer%2Fdevcontainer.json&geo=WestUs2)
 
