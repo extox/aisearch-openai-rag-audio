@@ -150,11 +150,11 @@ Azure 서비스를 프로비저닝한 상태에서 이 앱을 로컬로 실행�
 리전과 사용량에 따라 가격이 다르므로, 사용량에 따른 정확한 비용을 예측할 수 없습니다.
 그러나 아래 리소스에 대한 [Azure 가격 계산기](https://azure.com/e/a87a169b256e43c089015fda8182ca87)를 시도해볼 수 있습니다.
 
-\* Azure Container Apps: 1 CPU 코어, 2.0 GB RAM을 사용하는 소비 계획. 사용량 기반 요금제(Pay-as-You-Go). [가격](https://azure.microsoft.com/pricing/details/container-apps/)
-\* Azure OpenAI: 표준 등급, gpt-4o-realtime 및 text-embedding-3-large 모델. 사용된 1K 토큰 당 가격. [가격](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/)
-\* Azure AI Search: 표준 등급, 1 replica, 무료 수준의 시맨틱 검색. 시간당 가격. [가격](https://azure.microsoft.com/pricing/details/search/)
-\* Azure Blob Storage: ZRS(Zone-redundant storage)를 갖춘 표준 등급. 저장 및 읽기 작업당 가격. [가격](https://azure.microsoft.com/pricing/details/storage/blobs/)
-\* Azure Monitor: 사용량 기준 요금제(Pay-as-You-Go). 데이터 수집량에 따른 비용 발생. [가격](https://azure.microsoft.com/pricing/details/monitor/)
+* Azure Container Apps: 1 CPU 코어, 2.0 GB RAM을 사용하는 소비 계획. 사용량 기반 요금제(Pay-as-You-Go). [가격](https://azure.microsoft.com/pricing/details/container-apps/)
+* Azure OpenAI: 표준 등급, gpt-4o-realtime 및 text-embedding-3-large 모델. 사용된 1K 토큰 당 가격. [가격](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/)
+* Azure AI Search: 표준 등급, 1 replica, 무료 수준의 시맨틱 검색. 시간당 가격. [가격](https://azure.microsoft.com/pricing/details/search/)
+* Azure Blob Storage: ZRS(Zone-redundant storage)를 갖춘 표준 등급. 저장 및 읽기 작업당 가격. [가격](https://azure.microsoft.com/pricing/details/storage/blobs/)
+* Azure Monitor: 사용량 기준 요금제(Pay-as-You-Go). 데이터 수집량에 따른 비용 발생. [가격](https://azure.microsoft.com/pricing/details/monitor/)
 
 비용을 줄이려면 다양한 서비스의 무료 SKU로 전환할 수 있지만, 해당 SKU에는 제한이 있습니다.
 
