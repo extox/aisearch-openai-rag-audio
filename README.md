@@ -103,13 +103,13 @@ The steps below will provision Azure resources and deploy the application code t
 
 1. After the application has been successfully deployed you will see a URL printed to the console.  Navigate to that URL to interact with the app in your browser. To try out the app, click the "Start conversation button", say "Hello", and then ask a question about your data like "What is the whistleblower policy for Contoso electronics?" You can also now run the app locally by following the instructions in [the next section](#development-server).
 
-## Development server
+## 개발 서버
 
-You can run this app locally using either the Azure services you provisioned by following the [deployment instructions](#deploying-the-app), or by pointing the local app at already [existing services](docs/existing_services.md).
+Azure 서비스를 프로비저닝한 상태에서 이 앱을 로컬로 실행할 수 있으며, [배포 지침](#deploying-the-app)을 따르거나, [기존 서비스를](docs/existing_services.md) 가리킴으로써 가능합니다.
 
-1. If you deployed with `azd up`, you should see a `app/backend/.env` file with the necessary environment variables.
+1. `azd up` 명령으로 배포한 경우 `app/backend/.env` 파일에 필요한 환경 변수가 포함되어 있어야 합니다.
 
-2. If did *not* use `azd up`, you will need to create `app/backend/.env` file with the following environment variables:
+2. `azd up`을 사용하지 않은 경우, 다음 환경 변수를 포함하는 `app/backend/.env` 파일을 작성해야 합니다:
 
    ```shell
    AZURE_OPENAI_ENDPOINT=wss://<your instance name>.openai.azure.com
@@ -120,9 +120,9 @@ You can run this app locally using either the Azure services you provisioned by 
    AZURE_SEARCH_API_KEY=<your api key>
    ```
 
-   To use Entra ID (your user when running locally, managed identity when deployed) simply don't set the keys.
+   Entra ID(로컬 실행 시 사용자, 배포 시 관리 ID)를 사용하려면 키를 설정하지 마세요.
 
-3. Run this command to start the app:
+4. 다음 명령을 실행하여 앱을 시작하세요:
 
    Windows:
 
@@ -136,35 +136,35 @@ You can run this app locally using either the Azure services you provisioned by 
    ./scripts/start.sh
    ```
 
-4. The app is available on [http://localhost:8765](http://localhost:8765).
+5. 앱은 [http://localhost:8765](http://localhost:8765)에서 이용할 수 있습니다.
 
-   Once the app is running, when you navigate to the URL above you should see the start screen of the app:
-   ![app screenshot](docs/talktoyourdataapp.png)
+   앱이 실행되면 위 URL로 이동하면 앱의 시작 화면을 볼 수 있습니다:
+   ![앱 스크린샷](docs/talktoyourdataapp.png)
 
-   To try out the app, click the "Start conversation button", say "Hello", and then ask a question about your data like "What is the whistleblower policy for Contoso electronics?"
+   앱을 사용해보려면 "Start conversation" 버튼을 클릭하고, "Hello"라고 말한 다음 "What is the whistleblower policy for Contoso electronics" 같은 데이터에 대한 질문을 하세요.
 
 ## Guidance
 
-### Costs
+### 비용
 
-Pricing varies per region and usage, so it isn't possible to predict exact costs for your usage.
-However, you can try the [Azure pricing calculator](https://azure.com/e/a87a169b256e43c089015fda8182ca87) for the resources below.
+리전과 사용량에 따라 가격이 다르므로, 사용량에 따른 정확한 비용을 예측할 수 없습니다.
+그러나 아래 리소스에 대한 [Azure 가격 계산기](https://azure.com/e/a87a169b256e43c089015fda8182ca87)를 시도해볼 수 있습니다.
 
-* Azure Container Apps: Consumption plan with 1 CPU core, 2.0 GB RAM. Pricing with Pay-as-You-Go. [Pricing](https://azure.microsoft.com/pricing/details/container-apps/)
-* Azure OpenAI: Standard tier, gpt-4o-realtime and text-embedding-3-large models. Pricing per 1K tokens used. [Pricing](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/)
-* Azure AI Search: Standard tier, 1 replica, free level of semantic search. Pricing per hour. [Pricing](https://azure.microsoft.com/pricing/details/search/)
-* Azure Blob Storage: Standard tier with ZRS (Zone-redundant storage). Pricing per storage and read operations. [Pricing](https://azure.microsoft.com/pricing/details/storage/blobs/)
-* Azure Monitor: Pay-as-you-go tier. Costs based on data ingested. [Pricing](https://azure.microsoft.com/pricing/details/monitor/)
+\* Azure Container Apps: 1 CPU 코어, 2.0 GB RAM을 사용하는 소비 계획. 사용량 기반 요금제(Pay-as-You-Go). [가격](https://azure.microsoft.com/pricing/details/container-apps/)
+\* Azure OpenAI: 표준 등급, gpt-4o-realtime 및 text-embedding-3-large 모델. 사용된 1K 토큰 당 가격. [가격](https://azure.microsoft.com/pricing/details/cognitive-services/openai-service/)
+\* Azure AI Search: 표준 등급, 1 replica, 무료 수준의 시맨틱 검색. 시간당 가격. [가격](https://azure.microsoft.com/pricing/details/search/)
+\* Azure Blob Storage: ZRS(Zone-redundant storage)를 갖춘 표준 등급. 저장 및 읽기 작업당 가격. [가격](https://azure.microsoft.com/pricing/details/storage/blobs/)
+\* Azure Monitor: 사용량 기준 요금제(Pay-as-You-Go). 데이터 수집량에 따른 비용 발생. [가격](https://azure.microsoft.com/pricing/details/monitor/)
 
-To reduce costs, you can switch to free SKUs for various services, but those SKUs have limitations.
+비용을 줄이려면 다양한 서비스의 무료 SKU로 전환할 수 있지만, 해당 SKU에는 제한이 있습니다.
 
-⚠️ To avoid unnecessary costs, remember to take down your app if it's no longer in use,
-either by deleting the resource group in the Portal or running `azd down`.
+⚠️ 불필요한 비용을 피하기 위해 사용하지 않는 앱은 정지(Down)하거나, 포털에서 리소스 그룹을 삭제하거나 `azd down`을 실행하세요.
 
 ### Security
 
-This template uses [Managed Identity](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview) to eliminate the need for developers to manage these credentials. Applications can use managed identities to obtain Microsoft Entra tokens without having to manage any credentials.To ensure best practices in your repo we recommend anyone creating solutions based on our templates ensure that the [Github secret scanning](https://docs.github.com/code-security/secret-scanning/about-secret-scanning) setting is enabled in your repos.
+이 템플릿은 [Managed ID](https://learn.microsoft.com/entra/identity/managed-identities-azure-resources/overview)를 사용하여 개발자가 자격 증명을 관리할 필요를 생략할 수 있습니다. 애플리케이션은 Managed ID를 사용하여 자격 증명을 관리할 필요 없이 Microsoft Entra 토큰을 얻을 수 있습니다. 리포지토리에서 최선의 관행을 유지하기 위해 템플릿 기반의 솔루션을 만드는 모든 사람은 [Github secret scanning](https://docs.github.com/code-security/secret-scanning/about-secret-scanning) 설정이 리포지토리에서 활성화되어 있는지 확인하는 것을 권장합니다.
+
 
 ### Notes
 
->Sample data: The PDF documents used in this demo contain information generated using a language model (Azure OpenAI Service). The information contained in these documents is only for demonstration purposes and does not reflect the opinions or beliefs of Microsoft. Microsoft makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the information contained in this document. All rights reserved to Microsoft.
+>샘플 데이터: 이 데모에서 사용된 PDF 문서는 언어 모델(Azure OpenAI 서비스)을 사용하여 생성된 정보입니다. 이러한 문서에 포함된 정보는 시연 목적을 위한 것이며 Microsoft의 의견이나 신념을 반영하지 않습니다. Microsoft는 이 문서에 포함된 정보의 완전성, 정확성, 신뢰성, 적합성 또는 가용성에 대해 어떠한 종류의 표현이나 보증도 명시적 또는 묵시적으로 제공하지 않습니다. 모든 권리는 Microsoft에게 있습니다.
