@@ -53,7 +53,7 @@ You can run the project in your local VS Code Dev Container using the [Dev Conta
 
 ### Local environment
 
-1. Install the required tools:
+1. 다음 도구를 설치하세요:
    * [Azure Developer CLI](https://aka.ms/azure-dev/install)
    * [Node.js](https://nodejs.org/)
    * [Python >=3.11](https://www.python.org/downloads/)
@@ -62,46 +62,46 @@ You can run the project in your local VS Code Dev Container using the [Dev Conta
    * [Git](https://git-scm.com/downloads)
    * [Powershell](https://learn.microsoft.com/powershell/scripting/install/installing-powershell) - For Windows users only.
 
-2. Clone the repo (`git clone https://github.com/Azure-Samples/aisearch-openai-rag-audio`)
-3. Proceed to the next section to [deploy the app](#deploying-the-app).
+2. 리포지토리 클론(Clon) (`git clone https://github.com/Azure-Samples/aisearch-openai-rag-audio`)
+3. 다음 섹션으로 이동하여 [앱 배포](#deploying-the-app) 절차를 따르세요.
 
 ## Deploying the app
 
-The steps below will provision Azure resources and deploy the application code to Azure Container Apps.
+다음 단계는 Azure 리소스를 프로비저닝하고 Azure Container Apps에 애플리케이션 코드를 배포합니다.
 
-1. Login to your Azure account:
+1. Azure 계정에 로그인:
 
     ```shell
     azd auth login
     ```
 
-    For GitHub Codespaces users, if the previous command fails, try:
+    GitHub Codespaces 사용자의 경우 이전 명령이 실패하면 다음 명령을 시도하세요:
 
    ```shell
     azd auth login --use-device-code
     ```
 
-1. Create a new azd environment:
+1. 새 azd 환경 생성:
 
     ```shell
     azd env new
     ```
 
-    Enter a name that will be used for the resource group.
-    This will create a new folder in the `.azure` folder, and set it as the active environment for any calls to `azd` going forward.
+    리소스 그룹에 사용될 이름을 입력하세요.
+    이는 `.azure` 폴더에 새 폴더를 생성하고, 앞으로 `azd` 호출에 대해 활성 환경으로 설정합니다.
 
-1. (Optional) If you want to re-use any existing resources, follow [these instructions](docs/existing_services.md) to set the appropriate `azd` environment variables.
+1. (선택 사항) 기존 리소스를 재사용하려면, [이 지침](docs/existing_services.md)을 따라 적절한 `azd` 환경 변수를 설정하세요.
 
-1. Run this single command to provision the resources, deploy the code, and setup integrated vectorization for the sample data:
+1. 다음 단일 명령을 실행하여 리소스를 프로비저닝하고, 코드를 배포하며, 샘플 데이터의 통합 벡터화를 설정하세요:
 
    ```shell
    azd up
    ````
 
-   * **Important**: Beware that the resources created by this command will incur immediate costs, primarily from the AI Search resource. These resources may accrue costs even if you interrupt the command before it is fully executed. You can run `azd down` or delete the resources manually to avoid unnecessary spending.
-   * You will be prompted to select two locations, one for the majority of resources and one for the OpenAI resource, which is currently a short list. That location list is based on the [OpenAI model availability table](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#global-standard-model-availability) and may become outdated as availability changes.
+   * **중요**: 이 명령으로 생성된 리소스는 즉시 비용이 발생할 수 있으며, 주로 AI Search 리소스에서 발생합니다. 이 명령이 완전히 실행되기 전에 중단하더라도 비용이 발생할 수 있습니다. 불필요한 지출을 피하려면 `azd down`을 실행하거나 리소스를 수동으로 삭제하세요.
+   * 두 위치를 선택하라는 메시지가 표시됩니다. 하나는 대부분의 리소스를 위한 위치이고, 다른 하나는 OpenAI 리소스를 위한 위치입니다. 이 위치 목록은 [OpenAI 모델 가용성 표](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#global-standard-model-availability)를 기반으로 하며, 가용성이 변경됨에 따라 업데이트될 수 있습니다.
 
-1. After the application has been successfully deployed you will see a URL printed to the console.  Navigate to that URL to interact with the app in your browser. To try out the app, click the "Start conversation button", say "Hello", and then ask a question about your data like "What is the whistleblower policy for Contoso electronics?" You can also now run the app locally by following the instructions in [the next section](#development-server).
+1. 애플리케이션이 성공적으로 배포되면 콘솔에 URL이 출력됩니다. 이 URL로 이동하여 브라우저에서 앱과 상호작용하세요. 앱을 사용해보려면 "Start conversation" 버튼을 클릭하고, "Hello"라고 말한 다음 "What is the whistleblower policy for Contoso electronics?"와 같은 데이터에 대한 질문을 하세요. 이제 [다음 섹션](#development-server)의 지침에 따라 로컬에서 앱을 실행할 수도 있습니다.
 
 ## 개발 서버
 
