@@ -43,13 +43,13 @@ Once the codespace opens (this may take several minutes), open a new terminal an
 
 ### VS Code Dev Containers
 
-You can run the project in your local VS Code Dev Container using the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers):
+[Dev Containers 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)을 사용하여 로컬 VS Code Dev Container에서 프로젝트를 실행할 수 있습니다:
 
-1. Start Docker Desktop (install it if not already installed)
-2. Open the project:
+1. Docker Desktop 시작 (설치되지 않은 경우 설치)
+2. 프로젝트 열기:
 
-    [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/azure-samples/aisearch-openai-rag-audio)
-3. In the VS Code window that opens, once the project files show up (this may take several minutes), open a new terminal, and proceed to [deploying the app](#deploying-the-app).
+    [![Dev Containers에서 열기](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/azure-samples/aisearch-openai-rag-audio)
+3. VS Code 창에서 프로젝트 파일이 나타나면 (몇 분이 걸릴 수 있습니다), 새 터미널을 열고 [앱 배포](#deploying-the-app) 섹션의 절차를 따르세요.
 
 ### Local environment
 
