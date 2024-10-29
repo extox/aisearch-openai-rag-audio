@@ -4,7 +4,7 @@
 [![Open in GitHub Codespaces](https://img.shields.io/static/v1?style=for-the-badge&label=GitHub+Codespaces&message=Open&color=brightgreen&logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&skip_quickstart=true&machine=basicLinux32gb&repo=860141324&devcontainer_path=.devcontainer%2Fdevcontainer.json&geo=WestUs2)
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/Azure-Samples/aisearch-openai-rag-audio)
 
-This repo contains an example of how to implement RAG support in applications that use voice as their user interface, powered by the GPT-4o realtime API for audio. We describe the pattern in more detail in [this blog post](https://aka.ms/voicerag), and you can see this sample app in action in [this short video](https://youtu.be/vXJka8xZ9Ko).
+이 저장소는 음성을 사용자 인터페이스로 사용하는 애플리케이션에서 RAG 지원을 구현하는 방법의 예제를 포함하고 있으며, GPT-4o 실시간 API를 통해 제공됩니다. 우리는 이러한 패턴을 좀 더 자세히 [이 블로그 게시물](https://aka.ms/voicerag)에서 설명하며, [이 비디오](https://youtu.be/vXJka8xZ9Ko)에서 이 샘플 앱의 작동 모습을 볼 수 있습니다.
 
 * [기능](#Features)
 * [아키텍처 다이어그램](#architecture-diagram)
